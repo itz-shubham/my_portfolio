@@ -1,7 +1,8 @@
-import 'dart:html' as html;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:my_porfolio/src/colors.dart';
+
+import 'home.dart';
+import 'src/colors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,12 +35,13 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: const Color(0xFF131313),
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.black26,
           surfaceTintColor: Colors.black,
           elevation: 0.0,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.zero,
             backgroundColor: AppColors.primaryColor,
             foregroundColor: Colors.black,
             shape: RoundedRectangleBorder(
@@ -48,31 +50,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const GithubProfile(),
-    );
-  }
-}
-
-class GithubProfile extends StatefulWidget {
-  const GithubProfile({super.key});
-
-  @override
-  State<GithubProfile> createState() => _GithubProfileState();
-}
-
-class _GithubProfileState extends State<GithubProfile> {
-  @override
-  void initState() {
-    html.window.open('https://github.com/itz-shubham', "_self");
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Loading..."),
-      ),
+      home: const Home(),
     );
   }
 }
