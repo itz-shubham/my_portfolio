@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_porfolio/src/constants.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../utils/get_screen_type.dart';
@@ -28,9 +29,7 @@ class MyAppBar extends StatelessWidget {
             ),
             const Spacer(),
             ElevatedButton.icon(
-              onPressed: () => launchUrlString(
-                'https://firebasestorage.googleapis.com/v0/b/itz-shubham.appspot.com/o/Resume.pdf?alt=media&token=ebc88d8c-8360-4b10-b580-c5b3db42aa42',
-              ),
+              onPressed: () => launchUrlString(resumeLink),
               style: ElevatedButton.styleFrom(
                 fixedSize: const Size(128, 40),
                 textStyle: const TextStyle(fontWeight: FontWeight.bold),
